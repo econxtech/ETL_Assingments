@@ -1,0 +1,805 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/18/2026 3:05:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GO1QVHO"
+  DTS:CreatorName="DESKTOP-GO1QVHO\WORK-PC"
+  DTS:DTSID="{30677297-53D9-4C9C-A2CA-A0DA1D337CB2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{C1DEC653-EFCE-47F4-8D73-75E7593212E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{48A36E34-0078-4FDF-91EE-2197C3CF34B3}"
+      DTS:ObjectName="DESKTOP-GO1QVHO.EmadeDev">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GO1QVHO;Initial Catalog=EmadeDev;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{48A36E34-0078-4FDF-91EE-2197C3CF34B3}DESKTOP-GO1QVHO.EmadeDev;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_EmadeStoresSSIS]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="EmadeStoresSSIS"
+      DTS:DTSID="{2EAD87CE-F4D3-4470-B8AC-8A2E03D11118}"
+      DTS:ObjectName="FF_EmadeStoresSSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\WORK-PC\Documents\ETL Training\Inbound\Data\EmadeStores.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="store_id"
+              DTS:DTSID="{9559C36B-E2E7-424B-8B88-F68FF763930C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="store_name"
+              DTS:DTSID="{9C2B0719-7396-48FC-9206-3967519A0D8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{1782556B-DA1B-4E37-8802-E13413BEA106}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{812824CD-F900-497C-A268-24264F047461}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street"
+              DTS:DTSID="{DB0D3FE8-6F01-4200-A9A8-AF7FCA4745B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{BA7E6257-BECD-4419-88F7-B0E23467B91D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{3625C8DF-F876-4074-95C1-11C1350B8920}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zip_code"
+              DTS:DTSID="{95BB6B39-079A-455C-AB63-7A5BDBE49318}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Load_EmadeStoresSSIS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C05C4766-1274-42FE-B280-1D6177C3BDFE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Load_EmadeStoresSSIS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DST_EmadeStoresSSIS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[EmadeStoresSSIS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[store_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="store_id"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[store_id]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[store_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="store_name"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[store_name]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[store_name]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="street"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[street]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[street]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].Columns[zip_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="zip_code"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[zip_code]"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[zip_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input].ExternalColumns[zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="zip_code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="SRC_FF_EmadeStoresSSIS"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FF_EmadeStoresSSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[FF_EmadeStoresSSIS]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[store_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[store_id]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[store_id]"
+                      name="store_id"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[store_name]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[store_name]"
+                      name="store_name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[phone]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[street]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[street]"
+                      name="street"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[zip_code]"
+                      length="50"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].Columns[zip_code]"
+                      name="zip_code"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[store_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output].ExternalColumns[zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="zip_code" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Load_EmadeStoresSSIS.Paths[Flat File Source Output]"
+              endId="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ESQL_TruncateEmadeStoresSSIS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{588443C7-B665-436C-A51A-D59D511B97F4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ESQL_TruncateEmadeStoresSSIS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{48A36E34-0078-4FDF-91EE-2197C3CF34B3}"
+          SQLTask:SqlStatementSource="Truncate Table EmadeStoresSSIS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6707C8C1-8EEF-470C-84DE-B51E6505841E}"
+      DTS:From="Package\ESQL_TruncateEmadeStoresSSIS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Load_EmadeStoresSSIS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\DFT_Load_EmadeStoresSSIS"
+          TopLeft="164.999992623925,116.999998715363" />
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\ESQL_TruncateEmadeStoresSSIS"
+          TopLeft="38.1249982956797,12.9999998572626" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="160.791664962346,55.6666665239293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.874994328246,61.3333321914339"
+              Start="0,0"
+              End="116.874994328246,53.8333321914339">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6666660957169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.6666660957169"
+                    Point2="0,30.6666660957169"
+                    Point3="4,30.6666660957169" />
+                  <mssgle:LineSegment
+                    End="112.874994328246,30.6666660957169" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.874994328246,30.6666660957169"
+                    Point2="116.874994328246,30.6666660957169"
+                    Point3="116.874994328246,34.6666660957169" />
+                  <mssgle:LineSegment
+                    End="116.874994328246,53.8333321914339" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Load_EmadeStoresSSIS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42.6666666666667"
+          Id="Package\DFT_Load_EmadeStoresSSIS\SRC_FF_EmadeStoresSSIS"
+          TopLeft="116.24999480322,17.1052629700823" />
+        <NodeLayout
+          Size="196,42.6666666666667"
+          Id="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS"
+          TopLeft="232.49998960644,134.105261685445" />
+        <EdgeLayout
+          Id="Package\DFT_Load_EmadeStoresSSIS.Paths[Flat File Source Output]"
+          TopLeft="224.24999480322,59.771929636749">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5833281365535,74.3333320486964"
+              Start="0,0"
+              End="95.5833281365535,66.8333320486964">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1666660243482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.1666660243482"
+                    Point2="0,37.1666660243482"
+                    Point3="4,37.1666660243482" />
+                  <mssgle:LineSegment
+                    End="91.5833281365535,37.1666660243482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.5833281365535,37.1666660243482"
+                    Point2="95.5833281365535,37.1666660243482"
+                    Point3="95.5833281365535,41.1666660243482" />
+                  <mssgle:LineSegment
+                    End="95.5833281365535,66.8333320486964" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Load_EmadeStoresSSIS\DST_EmadeStoresSSIS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
