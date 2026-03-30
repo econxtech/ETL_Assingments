@@ -1,0 +1,1737 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2026 2:16:52 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GO1QVHO"
+  DTS:CreatorName="DESKTOP-GO1QVHO\WORK-PC"
+  DTS:DTSID="{0D34B983-DB3D-46D2-83CD-91BFDA386C30}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="ExportEmadeSalesData"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{9B0AB3A2-D712-4E0B-A13C-F0A230B8388E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D583ABE-B445-4365-9225-3A713E6B6336}"
+      DTS:ObjectName="DESKTOP-GO1QVHO.EmadeDev">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GO1QVHO;Initial Catalog=EmadeDev;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ExportEmadeSalesData-{9D583ABE-B445-4365-9225-3A713E6B6336}DESKTOP-GO1QVHO.EmadeDev;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_EmadeCustomers]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="EmadeCustomers"
+      DTS:DTSID="{13818FD8-CA1D-442D-9971-221589FD7816}"
+      DTS:ObjectName="FF_EmadeCustomers">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\WORK-PC\Documents\ETL Training\Outbound\EmadeCustomers.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_id"
+              DTS:DTSID="{80CE5538-B84F-48DF-9B97-FD2DD9CCEFF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{0E3ACECC-410F-4172-A64D-689A5FF04A37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{13177882-5201-479E-AC0F-2E7E0069E877}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{03CB7AF6-3FF1-4723-B3F0-FE376A0ECDBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{3CCD6671-5196-489B-9E76-D250B25B5BE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street"
+              DTS:DTSID="{F24A848C-33CB-47F7-9DEE-367A0CDE4D3C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{8C256B70-E096-40F6-9357-B83BF09FBA5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{CFA36897-CDBA-439F-B766-67CC02B3518E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zip_code"
+              DTS:DTSID="{FF8F9F28-AB19-4579-9399-DEC08E9A7440}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_ExportEmadeBrands]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="ExportEmadeBrands"
+      DTS:DTSID="{6F418FF4-6D38-47A1-A383-30356E6DC582}"
+      DTS:ObjectName="FF_ExportEmadeBrands">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\WORK-PC\Documents\ETL Training\Outbound\EmadeBrandsReport.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="brand_id"
+              DTS:DTSID="{14B35E2B-43F9-4650-9778-DD2CB48A0ACF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="brand_name"
+              DTS:DTSID="{BE7C2908-E1DD-4EAF-A555-2B5D561EED90}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FF_ExportEmadeCategories]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="ExportEmadeCategories"
+      DTS:DTSID="{BB5F19B7-149B-417B-BA57-6EFCAE0887B2}"
+      DTS:ObjectName="FF_ExportEmadeCategories">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\WORK-PC\Documents\ETL Training\Outbound\ExportEmadeCategoriesReport.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_id"
+              DTS:DTSID="{505F5541-BA95-481E-A071-2F4D01FDC614}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="category_name"
+              DTS:DTSID="{8B06665B-390E-4269-B7C6-46A388D86AE9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Process_Task_ExportEmadeSalesData"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7CFB8979-61F3-4653-BF46-6094208971CC}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Process_Task_ExportEmadeSalesData">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmade"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{3B6984C4-B41F-4238-B937-1460D7FBF4C9}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_ExportEmade"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{367B4B88-9B1B-4AED-AFEB-CACAC45AF742}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_ExportEmadeBrands"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="DST_ExportEmadeBrands"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_ExportEmadeBrands]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_ExportEmadeBrands]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].Columns[brand_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="brand_id"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_id]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_id]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].Columns[brand_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="brand_name"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_name]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_FF_ExportEmadeBrands"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From EmadeBrands</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_id]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_id]"
+                          name="brand_id"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_name]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_name]"
+                          name="brand_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_name" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_id]"
+                          name="brand_id" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_name]"
+                          name="brand_name" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands.Paths[OLE DB Source Output]"
+                  endId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands.Inputs[Flat File Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{DB95A89A-B51F-4923-B749-8CB90F35D045}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_ExportEmadeCategories"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="DST_ExportEmadeCategories"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_ExportEmadeCategories]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_ExportEmadeCategories]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input].Columns[category_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="category_id"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].Columns[category_id]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input].Columns[category_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="category_name"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input].ExternalColumns[category_name]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].Columns[category_name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input].ExternalColumns[category_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="category_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input].ExternalColumns[category_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="category_name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_FF_ExportEmadeCategories"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From EmadeCategories</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].Columns[category_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].Columns[category_id]"
+                          name="category_id"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].Columns[category_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].ExternalColumns[category_name]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].Columns[category_name]"
+                          name="category_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].ExternalColumns[category_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="category_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output].ExternalColumns[category_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="category_name" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[category_id]"
+                          name="category_id" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[category_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[category_name]"
+                          name="category_name" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories.Paths[OLE DB Source Output]"
+                  endId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories.Inputs[Flat File Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{755A18F4-AE43-4852-99E7-5834FE51553D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT_ExportEmadeCustomers"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="DST_ExportEmadeBrands"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_ExportEmadeBrands]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_ExportEmadeBrands]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].Columns[brand_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="brand_id"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_id]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_id]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].Columns[brand_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="brand_name"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_name]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input].ExternalColumns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_name" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Destination"
+                  localeId="2057"
+                  name="DST_FF_EmadeCustomers"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FF_EmadeCustomers]"
+                      connectionManagerRefId="Package.ConnectionManagers[FF_EmadeCustomers]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[customer_id]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer_id"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[customer_id]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[first_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="first_name"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[first_name]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[last_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="last_name"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[last_name]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[phone]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="phone"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[phone]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[email]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[email]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[street]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="street"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[street]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[street]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[city]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="city"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[city]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[state]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="state"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[state]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[state]" />
+                        <inputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].Columns[zip_code]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="zip_code"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[zip_code]"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[zip_code]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="first_name" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="last_name" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="phone" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="street" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input].ExternalColumns[zip_code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="zip_code" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_EmadeCustomers"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From EmadeCustomers</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[customer_id]"
+                          name="customer_id"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[first_name]"
+                          name="first_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[last_name]"
+                          name="last_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[phone]"
+                          name="phone"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[email]"
+                          name="email"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[street]"
+                          name="street"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[city]"
+                          name="city"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[state]"
+                          name="state"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[zip_code]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[zip_code]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].Columns[zip_code]"
+                          name="zip_code"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="first_name" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="last_name" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="phone" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="street" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output].ExternalColumns[zip_code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="zip_code" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                          name="customer_id" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                          name="first_name" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                          name="last_name" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[phone]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[phone]"
+                          name="phone" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[email]"
+                          name="email" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[street]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[street]"
+                          name="street" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[city]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[city]"
+                          name="city" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[state]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[state]"
+                          name="state" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[zip_code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[zip_code]"
+                          name="zip_code" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_FF_ExportEmadeBrands"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From EmadeBrands</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GO1QVHO.EmadeDev]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_id]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_id]"
+                          name="brand_id"
+                          truncationRowDisposition="IgnoreFailure" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="IgnoreFailure"
+                          externalMetadataColumnId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_name]"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].Columns[brand_name]"
+                          name="brand_name"
+                          truncationRowDisposition="IgnoreFailure" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_id" />
+                        <externalMetadataColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output].ExternalColumns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="brand_name" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_id]"
+                          name="brand_id" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[brand_name]"
+                          name="brand_name" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers.Paths[OLE DB Source Output]"
+                  endId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers.Inputs[Flat File Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers.Paths[OLE DB Source Output1]"
+                  endId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands.Inputs[Flat File Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{6183E5DD-BD30-4F82-99EB-587A2C82D9BC}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DAF44369-4828-479C-81B6-8924FF943D0A}"
+      DTS:From="Package\Process_Task_ExportEmadeSalesData"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Sequence Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmade"
+          TopLeft="100.440469524868,100.822053399238" />
+        <NodeLayout
+          Size="205.333333333334,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands"
+          TopLeft="306.690460304774,18.3659136922894" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories"
+          TopLeft="310.261888716548,154.230573854657" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers"
+          TopLeft="1.92857158822673,24.4160386170691" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="630,252"
+          Size="630,294.666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData"
+          TopLeft="48.7499978207052,38.9999995717877" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="205.333333333334,54.6666666666667"
+          Size="205.333333333334,98"
+          Id="Package\Sequence Container"
+          TopLeft="792.49996457249,177.894734888856" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="678.749997820705,186.333332905121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113.749966751785,40.561401983735"
+              Start="0,0"
+              End="106.249966751785,40.561401983735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.8749833758924,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.8749833758924,0"
+                    Point2="56.8749833758924,0"
+                    Point3="56.8749833758924,4" />
+                  <mssgle:LineSegment
+                    End="56.8749833758924,36.561401983735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.8749833758924,36.561401983735"
+                    Point2="56.8749833758924,40.561401983735"
+                    Point3="60.8749833758924,40.561401983735" />
+                  <mssgle:LineSegment
+                    End="106.249966751785,40.561401983735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands"
+          TopLeft="116.24999480322,27.3684207521317" />
+        <NodeLayout
+          Size="205.333333333334,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\DST_ExportEmadeBrands"
+          TopLeft="213.12499047257,120.42105130938" />
+        <EdgeLayout
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands.Paths[OLE DB Source Output]"
+          TopLeft="228.916661469887,70.0350874187984">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.8749956693502,50.3859638905812"
+              Start="0,0"
+              End="86.8749956693502,42.8859638905812">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1929819452906" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1929819452906"
+                    Point2="0,25.1929819452906"
+                    Point3="4,25.1929819452906" />
+                  <mssgle:LineSegment
+                    End="82.8749956693502,25.1929819452906" />
+                  <mssgle:CubicBezierSegment
+                    Point1="82.8749956693502,25.1929819452906"
+                    Point2="86.8749956693502,25.1929819452906"
+                    Point3="86.8749956693502,29.1929819452906" />
+                  <mssgle:LineSegment
+                    End="86.8749956693502,42.8859638905812" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeBrands\SRC_FF_ExportEmadeBrands">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories"
+          TopLeft="143.999995708466,30.999999076128" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\DST_ExportEmadeCategories"
+          TopLeft="181.999994575977,140.999995797873" />
+        <EdgeLayout
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories.Paths[OLE DB Source Output]"
+          TopLeft="265.333329041799,73.6666657427947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.999998867511,67.3333300550783"
+              Start="0,0"
+              End="27.999998867511,59.8333300550783">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6666650275392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.6666650275392"
+                    Point2="0,33.6666650275392"
+                    Point3="4,33.6666650275392" />
+                  <mssgle:LineSegment
+                    End="23.999998867511,33.6666650275392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.999998867511,33.6666650275392"
+                    Point2="27.999998867511,33.6666650275392"
+                    Point3="27.999998867511,37.6666650275392" />
+                  <mssgle:LineSegment
+                    End="27.999998867511,59.8333300550783" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCategories\SRC_FF_ExportEmadeCategories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193.333333333334,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers"
+          TopLeft="147.499993406236,47.2105257974272" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_FF_EmadeCustomers"
+          TopLeft="216.249990332872,133.421051166642" />
+        <EdgeLayout
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers.Paths[OLE DB Source Output]"
+          TopLeft="244.166660072903,89.8771924640939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.4166635933022,43.5438587025482"
+              Start="0,0"
+              End="77.4166635933022,36.0438587025482">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7719293512741" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7719293512741"
+                    Point2="0,21.7719293512741"
+                    Point3="4,21.7719293512741" />
+                  <mssgle:LineSegment
+                    End="73.4166635933022,21.7719293512741" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.4166635933022,21.7719293512741"
+                    Point2="77.4166635933022,21.7719293512741"
+                    Point3="77.4166635933022,25.7719293512741" />
+                  <mssgle:LineSegment
+                    End="77.4166635933022,36.0438587025482" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_FF_ExportEmadeBrands"
+          TopLeft="484.642840501453,197.516290411398" />
+        <NodeLayout
+          Size="205.333333333334,42.6666666666667"
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\DST_ExportEmadeBrands"
+          TopLeft="454.374982817099,286.283206810656" />
+        <EdgeLayout
+          Id="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers.Paths[OLE DB Source Output1]"
+          TopLeft="597.30950716812,240.182957078065">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40.2678576843546,46.1002497325912"
+              Start="0,0"
+              End="-40.2678576843546,38.6002497325912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0501248662956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0501248662956"
+                    Point2="0,23.0501248662956"
+                    Point3="-4,23.0501248662956" />
+                  <mssgle:LineSegment
+                    End="-36.2678576843546,23.0501248662956" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.2678576843546,23.0501248662956"
+                    Point2="-40.2678576843546,23.0501248662956"
+                    Point3="-40.2678576843546,27.0501248662956" />
+                  <mssgle:LineSegment
+                    End="-40.2678576843546,38.6002497325912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process_Task_ExportEmadeSalesData\DFT_ExportEmadeCustomers\SRC_EmadeCustomers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
